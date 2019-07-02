@@ -51,7 +51,7 @@ const MainPage = () => {
             <RelativeContainer>
                 <IMG src={require('../../assets/bluebuildingback.png')} />
                 <AbsoluteContainer>
-                    <div style={{ width: "100%" }} >
+                    <div style={{ width: 900 }} >
                         <IMG src={require('../../assets/1.png')} />
                     </div>
                 </AbsoluteContainer>
@@ -59,13 +59,13 @@ const MainPage = () => {
             <div style={{
                 marginTop: 50,
                 marginBottom: 90,
-                width: "70%"
+                width: "900px"
             }}>
                 <IMG src={require('../../assets/2.png')} />
             </div>
             <IMG src={require('../../assets/3.png')} />
             <div style={{
-                width: "65%",
+                width: "900px",
                 marginTop: 30,
                 marginBottom: 50
 
@@ -77,7 +77,7 @@ const MainPage = () => {
             <div />
             <GREY_BACKGROUND>
                 <div style={{
-                    width: "70%",
+                    width: "1000px",
                     marginTop: 100,
                     marginBottom: 100
                 }}>
@@ -90,7 +90,7 @@ const MainPage = () => {
                 </div>
             </GREY_BACKGROUND>
             <div style={{
-                width: "70%",
+                width: "1000px",
                 marginTop: 100,
                 marginBottom: 100
             }}>
@@ -119,7 +119,7 @@ const MainPage = () => {
 
             <GREY_BACKGROUND>
                 <div style={{
-                    width: "60%",
+                    width: "880px",
                     marginTop: 100,
                     marginBottom: 100,
                     display: "flex",
@@ -132,14 +132,14 @@ const MainPage = () => {
             </GREY_BACKGROUND>
 
             <div style={{
-                width: "70%",
+                width: "1000px",
                 marginTop: 100,
                 marginBottom: 70
             }}>
                 <IMG src={require('../../assets/14.png')} />
             </div>
             <div style={{
-                width: "60%",
+                width: "860px",
                 marginBottom: 30
             }}>
                 <IMG src={require('../../assets/15.png')} />
@@ -151,7 +151,7 @@ const MainPage = () => {
                 paddingBottom: 100
             }}>
                 <Row style={{
-                    width: "70%",
+                    width: "1000px",
                     display: "flex",
                     justifyContent: "flex-start",
                     marginTop: 90,
@@ -162,7 +162,7 @@ const MainPage = () => {
                     }} src={require('../../assets/19.png')} />
                 </Row>
                 <Row style={{
-                    width: "60%",
+                    width: "864px",
                     justifyContent: "center",
                     alignItems: "center"
                 }}>
@@ -184,7 +184,7 @@ const MainPage = () => {
                 </Row>
             </GREY_BACKGROUND>
             <div style={{
-                width: "70%"
+                width: "1000px"
             }}>
                 <Row style={{
                     marginTop: 100
@@ -240,7 +240,7 @@ const MainPage = () => {
             <div style={{
                 display: "flex",
                 flexDirection: "column",
-                width: "60%",
+                width: "860px",
                 alignItems: "center"
             }}>
                 <IMG style={{
