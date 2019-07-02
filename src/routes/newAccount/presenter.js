@@ -44,9 +44,9 @@ const Row = styled.div`
 `;
 
 
-const Presenter = ({ iconLoading, enterIconLoading, username,
+const Presenter = ({ iconLoading, username,
     password1,
-    password2, inputChange }) => {
+    password2, inputChange, submitButtonClicked }) => {
     return (
         <Container>
 
@@ -104,7 +104,7 @@ const Presenter = ({ iconLoading, enterIconLoading, username,
                     type="primary"
                     icon="poweroff"
                     loading={iconLoading}
-                    onClick={enterIconLoading}
+                    onClick={submitButtonClicked}
                 >
                     Submit!
                 </Button>
