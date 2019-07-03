@@ -27,7 +27,7 @@ const IMG = styled.img`
   width: 100%;
 `;
 
-const Presenter = ({ login, logoutButtonClicked }) => {
+const Presenter = ({ login, logoutButtonClicked, navItemClicked }) => {
   return (
     <Container>
       <Row>
@@ -38,11 +38,21 @@ const Presenter = ({ login, logoutButtonClicked }) => {
           }}
           src={require("../../assets/logo.png")}
         />
-        <Text>Finchain 소개</Text>
-        <Text>시장 현황 및 전략</Text>
-        <Text>주요 서비스</Text>
-        <Text>BANK ISSUE COIN</Text>
-        <Text>VISION & GOAL</Text>
+        <Text onClick={navItemClicked} id={"1"}>
+          Finchain 소개
+        </Text>
+        <Text onClick={navItemClicked} id={"2"}>
+          시장 현황 및 전략
+        </Text>
+        <Text onClick={navItemClicked} id={"3"}>
+          주요 서비스
+        </Text>
+        <Text onClick={navItemClicked} id={"4"}>
+          BANK ISSUE COIN
+        </Text>
+        <Text onClick={navItemClicked} id={"5"}>
+          VISION & GOAL
+        </Text>
       </Row>
       <Row>
         {login ? (

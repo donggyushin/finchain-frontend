@@ -5,6 +5,7 @@ import NavigationBar from "./components/navigationBar";
 import styled from "styled-components";
 import LoginPage from "./routes/login";
 import NewAccountPage from "./routes/newAccount";
+import TopButton from "./components/topButton";
 
 const NavigationBarContainer = styled.div`
   width: 100%;
@@ -61,6 +62,15 @@ function App({ login, logout }) {
         <Route path={"/newaccount"} exact component={NewAccountPage} />
         <Route component={MainPage} />
       </Switch>
+      <div
+        style={{
+          position: "fixed",
+          bottom: "100px",
+          right: "50px"
+        }}
+      >
+        <TopButton />
+      </div>
     </Router>
   );
 }
