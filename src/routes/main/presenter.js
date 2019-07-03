@@ -84,7 +84,12 @@ const MainPage = () => {
         <Fade bottom cascade>
           <IMG src={require("../../assets/4.png")} />
 
-          <IMG src={require("../../assets/5.png")} />
+          <IMG
+            style={{
+              marginTop: 20
+            }}
+            src={require("../../assets/5.png")}
+          />
         </Fade>
       </div>
 
@@ -103,7 +108,12 @@ const MainPage = () => {
             <div style={{ marginTop: 70 }}>
               <IMG src={require("../../assets/7.png")} />
             </div>
-            <IMG src={require("../../assets/8.png")} />
+            <IMG
+              style={{
+                marginTop: 20
+              }}
+              src={require("../../assets/8.png")}
+            />
           </div>
         </Fade>
       </GREY_BACKGROUND>
@@ -363,7 +373,7 @@ const MainPage = () => {
           />
           <IMG
             style={{
-              width: "90%",
+              width: "88%",
               marginLeft: 50
             }}
             src={require("../../assets/33.png")}

@@ -98,7 +98,8 @@ class Container extends React.Component {
           return;
         } else {
           // else, go to the login page
-          this.props.history.push("/login");
+          alert("회원가입에 성공했습니다. ");
+          this.props.history.push("/");
           return;
         }
       })
