@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 import "./index.css";
 
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ const IMG = styled.img`
 
 const GREY_BACKGROUND = styled.div`
   width: 100%;
-  background: #ebeced;
+  background: #fafbfc;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,9 +188,18 @@ const MainPage = () => {
         }}
       >
         <Fade bottom cascade>
-          <IMG src={require("../../assets/15.png")} />
-          <IMG src={require("../../assets/16.png")} />
-          <IMG src={require("../../assets/17.png")} />
+          <IMG
+            style={{ marginBottom: 40 }}
+            src={require("../../assets/15.png")}
+          />
+          <IMG
+            style={{ marginBottom: 40 }}
+            src={require("../../assets/16.png")}
+          />
+          <IMG
+            style={{ marginBottom: 40 }}
+            src={require("../../assets/17.png")}
+          />
           <IMG src={require("../../assets/18.png")} />
         </Fade>
       </div>

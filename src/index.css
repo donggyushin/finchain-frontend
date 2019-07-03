@@ -92,3 +92,7 @@ video {
 :focus {
   outline: 0;
 }
+
+body {
+  min-width: 1200px;
+}

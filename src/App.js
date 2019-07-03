@@ -51,7 +51,8 @@ function App({ login, logout }) {
     <Router>
       <NavigationBarContainer
         style={{
-          marginTop: 20
+          marginTop: 20,
+          minWidth: 1200
         }}
       >
         <NavigationBar logout={logout} login={login} />
