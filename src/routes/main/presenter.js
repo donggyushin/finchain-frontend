@@ -284,7 +284,8 @@ const MainPage = () => {
           >
             <IMG
               style={{
-                width: 300
+                width: 300,
+                height: 45
               }}
               src={require("../../assets/19.png")}
             />
