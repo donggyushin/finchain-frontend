@@ -58,6 +58,13 @@ const Row = styled.div`
   width: 100%;
 `;
 
+const CopyRight = styled.div`
+  background: #12335f;
+  width: 100%;
+  height: 300px;
+  position: relative;
+`;
+
 const MainPage = () => {
   return (
     <Container>
@@ -90,7 +97,7 @@ const MainPage = () => {
           />
           Sorry, your browser doesn't support embedded videos
         </video>
-        <div style={{ width: 700 }}>
+        <div style={{ width: 660 }}>
           <Fade bottom cascade>
             <IMG src={require("../../assets/1.png")} />
           </Fade>
@@ -434,10 +441,21 @@ const MainPage = () => {
           />
         </Fade>
       </div>
-      <IMG
-        src={require("../../assets/bluebuildingback.png")}
-        style={{ width: "100%", height: 300 }}
-      />
+
+      <CopyRight
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
+        <IMG
+          style={{
+            width: "50%"
+          }}
+          src={require("../../assets/text.png")}
+        />
+      </CopyRight>
     </Container>
   );
 };
