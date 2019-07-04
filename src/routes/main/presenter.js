@@ -97,7 +97,7 @@ const MainPage = () => {
           />
           Sorry, your browser doesn't support embedded videos
         </video>
-        <div style={{ width: 660 }}>
+        <div style={{ width: 630 }}>
           <Fade bottom cascade>
             <IMG src={require("../../assets/1.png")} />
           </Fade>
@@ -284,7 +284,7 @@ const MainPage = () => {
           >
             <IMG
               style={{
-                width: "30%"
+                width: 300
               }}
               src={require("../../assets/19.png")}
             />
@@ -334,7 +334,8 @@ const MainPage = () => {
               src={require("../../assets/23.png")}
               style={{
                 width: 100,
-                marginLeft: 40
+                marginLeft: 40,
+                height: 103
               }}
             />
           </Row>
@@ -451,7 +452,7 @@ const MainPage = () => {
       >
         <IMG
           style={{
-            width: "50%"
+            width: 710
           }}
           src={require("../../assets/text.png")}
         />
