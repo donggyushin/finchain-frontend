@@ -405,44 +405,46 @@ const MainPage = () => {
           </Row>
         </Fade>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "860px",
-          alignItems: "center"
-        }}
-      >
-        <Fade bottom cascade>
-          <IMG
-            style={{
-              width: "80%",
-              marginBottom: 80
-            }}
-            src={require("../../assets/31.png")}
-          />
-          <IMG
-            style={{
-              marginBottom: 50
-            }}
-            src={require("../../assets/32.png")}
-          />
-          <IMG
-            style={{
-              width: "88%",
-              marginLeft: 50
-            }}
-            src={require("../../assets/33.png")}
-          />
-          <IMG
-            style={{
-              marginTop: 50,
-              marginBottom: 120
-            }}
-            src={require("../../assets/34.png")}
-          />
-        </Fade>
-      </div>
+      <GREY_BACKGROUND style={{ paddingTop: 100 }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "860px",
+            alignItems: "center"
+          }}
+        >
+          <Fade bottom cascade>
+            <IMG
+              style={{
+                width: "80%",
+                marginBottom: 80
+              }}
+              src={require("../../assets/31.png")}
+            />
+            <IMG
+              style={{
+                marginBottom: 50
+              }}
+              src={require("../../assets/32.png")}
+            />
+            <IMG
+              style={{
+                width: "88%",
+                marginLeft: 50
+              }}
+              src={require("../../assets/33.png")}
+            />
+            <IMG
+              style={{
+                marginTop: 50,
+                marginBottom: 120
+              }}
+              src={require("../../assets/34.png")}
+            />
+          </Fade>
+        </div>
+      </GREY_BACKGROUND>
 
       <CopyRight
         style={{
