@@ -10,6 +10,15 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+const BackgroundAbsoluteContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
 const AbsoluteContainer = styled.div`
   position: absolute;
   top: 50%;
@@ -20,6 +29,9 @@ const AbsoluteContainer = styled.div`
 
 const RelativeContainer = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const IMG = styled.img`
@@ -49,15 +61,40 @@ const Row = styled.div`
 const MainPage = () => {
   return (
     <Container>
-      <RelativeContainer>
-        <IMG src={require("../../assets/bluebuildingback.png")} />
-        <AbsoluteContainer>
-          <div style={{ width: 900 }}>
-            <Fade bottom cascade>
-              <IMG src={require("../../assets/1.png")} />
-            </Fade>
-          </div>
-        </AbsoluteContainer>
+      <RelativeContainer
+        style={{
+          height: 600,
+          width: "100%"
+        }}
+      >
+        <BackgroundAbsoluteContainer>
+          <IMG
+            style={{
+              height: 600
+            }}
+            src={require("../../assets/bluebuildingback.png")}
+          />
+        </BackgroundAbsoluteContainer>
+        <video
+          id="vid"
+          autoPlay
+          muted
+          controls
+          style={{ zIndex: 2, marginRight: 60 }}
+          width="500"
+        >
+          {console.log(document.getElementById("vid"))}
+          <source
+            type={"video/mp4"}
+            src={require("../../assets/finchainvideo.mp4")}
+          />
+          Sorry, your browser doesn't support embedded videos
+        </video>
+        <div style={{ width: 700 }}>
+          <Fade bottom cascade>
+            <IMG src={require("../../assets/1.png")} />
+          </Fade>
+        </div>
       </RelativeContainer>
       <Fade bottom cascade>
         <div>
@@ -78,11 +115,20 @@ const MainPage = () => {
         style={{
           width: "900px",
           marginTop: 30,
-          marginBottom: 50
+          marginBottom: 50,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center"
         }}
       >
         <Fade bottom cascade>
-          <IMG src={require("../../assets/4.png")} />
+          <IMG
+            style={{
+              width: 700,
+              marginRight: -35
+            }}
+            src={require("../../assets/4.png")}
+          />
 
           <IMG
             style={{
@@ -280,7 +326,8 @@ const MainPage = () => {
             <IMG
               src={require("../../assets/23.png")}
               style={{
-                width: 100
+                width: 100,
+                marginLeft: 40
               }}
             />
           </Row>
