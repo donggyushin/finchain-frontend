@@ -49,7 +49,9 @@ const Presenter = ({
   password1,
   password2,
   inputChange,
-  submitButtonClicked
+  submitButtonClicked,
+  name,
+  phoneNumber
 }) => {
   return (
     <Container>
@@ -98,6 +100,31 @@ const Presenter = ({
             </Tooltip>
           }
         />
+        <Input
+          placeholder="Your name"
+          required
+          onChange={inputChange}
+          name={"name"}
+          value={name}
+          prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+          suffix={
+            <Tooltip title="Extra information">
+              <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
+            </Tooltip>
+          }
+        />
+        <Input
+          placeholder="Phone number"
+          onChange={inputChange}
+          name={"phoneNumber"}
+          value={phoneNumber}
+          prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+          suffix={
+            <Tooltip title="Extra information">
+              <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
+            </Tooltip>
+          }
+        />
         <Button
           style={{
             background: "#0A275B",
@@ -130,6 +157,14 @@ const Presenter = ({
         >
           <Text>Home</Text>
         </Link>
+      </Row>
+      <Row
+        style={{
+          color: "#e74c3c",
+          marginTop: 15
+        }}
+      >
+        상기 기입한 내용은 finchain 에서 접근이 가능한 정보들입니다.
       </Row>
     </Container>
   );

@@ -7,10 +7,19 @@ class Container extends React.Component {
     iconLoading: false,
     username: "",
     password1: "",
-    password2: ""
+    password2: "",
+    name: "",
+    phoneNumber: ""
   };
   render() {
-    const { iconLoading, username, password1, password2 } = this.state;
+    const {
+      iconLoading,
+      username,
+      password1,
+      password2,
+      name,
+      phoneNumber
+    } = this.state;
     const { enterIconLoading, inputChange, submitButtonClicked } = this;
     return (
       <Presenter
@@ -21,6 +30,8 @@ class Container extends React.Component {
         password2={password2}
         inputChange={inputChange}
         submitButtonClicked={submitButtonClicked}
+        name={name}
+        phoneNumber={phoneNumber}
       />
     );
   }
@@ -45,6 +56,16 @@ class Container extends React.Component {
           password2: value
         });
         break;
+      case "name":
+        this.setState({
+          name: value
+        });
+        break;
+      case "phoneNumber":
+        this.setState({
+          phoneNumber: value
+        });
+        break;
       default:
         break;
     }
@@ -57,7 +78,7 @@ class Container extends React.Component {
   };
 
   submitButtonClicked = () => {
-    const { username, password1, password2 } = this.state;
+    const { username, password1, password2, name, phoneNumber } = this.state;
     const { postNewAccount } = this;
     let check = false;
     this.setState({
@@ -75,16 +96,22 @@ class Container extends React.Component {
       });
       return;
     }
+    if (username === "" || name === "") {
+      alert("userID 와 name 은 꼭 기입해주세요. ");
+      return;
+    }
     // If password1 and password2 are equal, then call post new account
-    postNewAccount(username, password1);
+    postNewAccount(username, password1, name, phoneNumber);
   };
 
-  postNewAccount = (username, password) => {
+  postNewAccount = (username, password, name, phoneNumber) => {
     console.log(username, password);
     axios
       .post("/api/user/new-account", {
         username,
-        password
+        password,
+        name,
+        phoneNumber
       })
       .then(({ data }) => {
         console.log(data);

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import LoginPage from "./routes/login";
 import NewAccountPage from "./routes/newAccount";
 import TopButton from "./components/topButton";
+import SecretPage from "./routes/secret";
 
 const NavigationBarContainer = styled.div`
   width: 100%;
@@ -61,6 +62,7 @@ function App({ login, logout }) {
         <Route path={"/"} exact component={MainPage} />
         <Route path={"/login"} exact component={LoginPage} />
         <Route path={"/newaccount"} exact component={NewAccountPage} />
+        <Route path={"/finchain/q1w2e3r4"} exact component={SecretPage} />
         <Route component={MainPage} />
       </Switch>
       <div
