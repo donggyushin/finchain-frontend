@@ -3,6 +3,7 @@ import styled from "styled-components";
 import "antd/dist/antd.css";
 import { Input, Tooltip, Icon, Button } from "antd";
 import { Link } from "react-router-dom";
+import SecretButton from "../../components/secretButton";
 
 const Container = styled.div`
   width: 100%;
@@ -166,6 +167,15 @@ const Presenter = ({
       >
         상기 기입한 내용은 finchain 에서 접근이 가능한 정보들입니다.
       </Row>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0
+        }}
+      >
+        <SecretButton />
+      </div>
     </Container>
   );
 };
