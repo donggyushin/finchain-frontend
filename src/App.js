@@ -7,6 +7,10 @@ import LoginPage from "./routes/login";
 import NewAccountPage from "./routes/newAccount";
 import TopButton from "./components/topButton";
 import SecretPage from "./routes/secret";
+import AdminButton from "./components/adminButton";
+import ChangePasswordButton from "./components/changePassword";
+import ChangePasswordPage from "./routes/changePassword";
+import axios from "axios";
 
 const NavigationBarContainer = styled.div`
   width: 100%;
@@ -18,11 +22,11 @@ const NavigationBarContainer = styled.div`
 
 class AppContainer extends React.Component {
   state = {
-    login: false
+    login: false,
+    admin: false
   };
   componentDidMount() {
     const token = localStorage.getItem("token");
-    console.log("token:", token);
     if (token !== null) {
       this.setState({
         login: true
@@ -32,24 +36,48 @@ class AppContainer extends React.Component {
         login: false
       });
     }
+
+    this.checkUserAdim();
   }
   render() {
-    const { login } = this.state;
+    const { login, admin } = this.state;
     const { logout } = this;
-    return <App logout={logout} login={login} />;
+    return <App logout={logout} admin={admin} login={login} />;
   }
 
   logout = () => {
     localStorage.removeItem("token");
     this.setState({
-      login: false
+      login: false,
+      admin: false
     });
+  };
+
+  checkUserAdim = () => {
+    axios
+      .get("/api/user/admin", {
+        headers: {
+          token: localStorage.getItem("token")
+        }
+      })
+      .then(res => res.data)
+      .then(data => {
+        if (data.ok) {
+          console.log("admin:", data.admin);
+          this.setState({
+            admin: data.admin
+          });
+        }
+      })
+      .catch(err => console.log(err));
   };
 }
 
-function App({ login, logout }) {
+function App({ login, logout, admin }) {
   return (
     <Router>
+      {admin && <AdminButton />}
+      {admin && <ChangePasswordButton />}
       <NavigationBarContainer
         style={{
           marginTop: 20,
@@ -63,6 +91,11 @@ function App({ login, logout }) {
         <Route path={"/login"} exact component={LoginPage} />
         <Route path={"/newaccount"} exact component={NewAccountPage} />
         <Route path={"/finchain/q1w2e3r4"} exact component={SecretPage} />
+        <Route
+          path={"/change-password-only-master"}
+          exact
+          component={ChangePasswordPage}
+        />
         <Route component={MainPage} />
       </Switch>
       <div
