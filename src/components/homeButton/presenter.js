@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
   position: absolute;
   top: 100px;
-  right: 100px;
+  right: 50px;
 `;
 
 const Button = styled.div`

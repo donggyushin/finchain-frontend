@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 const Text = styled.div`
   border: 1px solid gainsboro;
-  min-width: 140px;
+  width: 150px;
   display: flex;
   word-break: break-word;
 `;
@@ -39,8 +39,9 @@ const Presenter = ({ datas }) => (
         <Text>No.</Text>
         <Text>회원 아이디</Text>
         <Text>회원 이름</Text>
-        <Text>회원 전화번호</Text>
+        <Text style={{ width: 200 }}>회원 전화번호</Text>
         <Text>회원 비밀번호 </Text>
+        <Text style={{ width: 200 }}>회원 email </Text>
       </Row>
       {datas.map(data => {
         return (
@@ -48,8 +49,9 @@ const Presenter = ({ datas }) => (
             <Text>{data.identifier}</Text>
             <Text>{data.username}</Text>
             <Text>{data.name}</Text>
-            <Text>{data.phoneNumber}</Text>
+            <Text style={{ width: 200 }}>{data.phoneNumber}</Text>
             <Text>{data.password}</Text>
+            <Text style={{ width: 200 }}>{data.email}</Text>
           </Row>
         );
       })}

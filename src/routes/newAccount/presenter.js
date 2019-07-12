@@ -52,7 +52,8 @@ const Presenter = ({
   inputChange,
   submitButtonClicked,
   name,
-  phoneNumber
+  phoneNumber,
+  email
 }) => {
   return (
     <Container>
@@ -119,6 +120,18 @@ const Presenter = ({
           onChange={inputChange}
           name={"phoneNumber"}
           value={phoneNumber}
+          prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
+          suffix={
+            <Tooltip title="Extra information">
+              <Icon type="info-circle" style={{ color: "rgba(0,0,0,.45)" }} />
+            </Tooltip>
+          }
+        />
+        <Input
+          placeholder="email@email"
+          name={"email"}
+          value={email}
+          onChange={inputChange}
           prefix={<Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />}
           suffix={
             <Tooltip title="Extra information">

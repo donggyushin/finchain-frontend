@@ -9,7 +9,8 @@ class Container extends React.Component {
     password1: "",
     password2: "",
     name: "",
-    phoneNumber: ""
+    phoneNumber: "",
+    email: ""
   };
   render() {
     const {
@@ -18,7 +19,8 @@ class Container extends React.Component {
       password1,
       password2,
       name,
-      phoneNumber
+      phoneNumber,
+      email
     } = this.state;
     const { enterIconLoading, inputChange, submitButtonClicked } = this;
     return (
@@ -32,6 +34,7 @@ class Container extends React.Component {
         submitButtonClicked={submitButtonClicked}
         name={name}
         phoneNumber={phoneNumber}
+        email={email}
       />
     );
   }
@@ -66,6 +69,11 @@ class Container extends React.Component {
           phoneNumber: value
         });
         break;
+      case "email":
+        this.setState({
+          email: value
+        });
+        break;
       default:
         break;
     }
@@ -78,7 +86,14 @@ class Container extends React.Component {
   };
 
   submitButtonClicked = () => {
-    const { username, password1, password2, name, phoneNumber } = this.state;
+    const {
+      username,
+      password1,
+      password2,
+      name,
+      phoneNumber,
+      email
+    } = this.state;
     const { postNewAccount } = this;
     let check = false;
     this.setState({
@@ -96,22 +111,23 @@ class Container extends React.Component {
       });
       return;
     }
-    if (username === "" || name === "") {
-      alert("userID 와 name 은 꼭 기입해주세요. ");
+    if (username === "" || name === "" || phoneNumber === "" || email === "") {
+      alert("빠짐없이 기입해주세요. ");
       return;
     }
     // If password1 and password2 are equal, then call post new account
-    postNewAccount(username, password1, name, phoneNumber);
+    postNewAccount(username, password1, name, phoneNumber, email);
   };
 
-  postNewAccount = (username, password, name, phoneNumber) => {
+  postNewAccount = (username, password, name, phoneNumber, email) => {
     console.log(username, password);
     axios
       .post("/api/user/new-account", {
         username,
         password,
         name,
-        phoneNumber
+        phoneNumber,
+        email
       })
       .then(({ data }) => {
         console.log(data);
